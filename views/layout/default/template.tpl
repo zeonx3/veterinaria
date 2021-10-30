@@ -3,37 +3,40 @@
    <head>
    	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>{$titulo|default:"Sin Titulo"}</title>
-      <meta name="description" content="Your Description Here">
-      <meta name="keywords" content="bootstrap themes, portfolio, responsive theme">
+    <title>{$titulo|default:"Sin Titulo"}</title>
+    <meta name="description" content="Your Description Here">
+    <meta name="keywords" content="bootstrap themes, portfolio, responsive theme">
       <!-- Favicons
     ================================================== -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{$_layoutParams.ruta_img}apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{$_layoutParams.ruta_img}apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{$_layoutParams.ruta_img}apple-touch-icon-114x114.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css"  href="{$_layoutParams.ruta_css}bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="{$_layoutParams.root}views/layout/default/fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Stylesheet
-    ================================================== -->
-    <link rel="stylesheet" type="text/css"  href="{$_layoutParams.ruta_css}style.css">
-    <link rel="stylesheet" type="text/css" href="{$_layoutParams.ruta_css}responsive.css">
+    <link rel="stylesheet" href="{$_layoutParams.ruta_css}animate.css">
 
-    <script type="text/javascript" src="{$_layoutParams.ruta_js}modernizr.custom.js"></script>
-    
+    <link rel="stylesheet" href="{$_layoutParams.ruta_css}owl.carousel.min.css">
+    <link rel="stylesheet" href="{$_layoutParams.ruta_css}owl.theme.default.min.css">
+    <link rel="stylesheet" href="{$_layoutParams.ruta_css}magnific-popup.css">
 
-    <link href='http://fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,900,400,200,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="{$_layoutParams.ruta_css}bootstrap-datepicker.css">
+    <link rel="stylesheet" href="{$_layoutParams.ruta_css}jquery.timepicker.css">
+
+    <link rel="stylesheet" href="{$_layoutParams.ruta_css}flaticon.css">
+    <link rel="stylesheet" href="{$_layoutParams.ruta_css}style.css">
+
+
+
+
+
+
      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->  
-      
+    <![endif]-->
+
       {if isset($_layoutParams.js) && count($_layoutParams.js)}
         {foreach item=js from=$_layoutParams.js}
           <script type="text/javascript" src="{$js}"></script>
@@ -43,8 +46,9 @@
 
    </head>
    <body>
+    {include file="header.tpl"}
     {include file="menu.tpl"}
-    
+
       <div class="row">
             <noscript><p>Debe tener el soporte de Javascript habilitado</p></noscript>
             {if isset($_error)}
@@ -59,22 +63,23 @@
 
             {include file=$_contenido}
           </div>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{$_layoutParams.ruta_js}jquery.1.11.1.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="{$_layoutParams.ruta_js}bootstrap.js"></script>
 
-    <!-- Javascripts
-    ================================================== -->
-    <script type="text/javascript" src="{$_layoutParams.ruta_js}main.js"></script>
-    <script type="text/javascript" src="{$_layoutParams.ruta_js}funciones.js"></script>
-    
-    {include file="header.tpl"}
-    {include file="service.tpl"}
-    {include file="portfolio.tpl"}
-    {include file="about.tpl"}
-    {include file="whyme.tpl"}
-    {include file="footer.tpl"}
+  <script src="{$_layoutParams.ruta_js}jquery.min.js"></script>
+  <script src="{$_layoutParams.ruta_js}jquery-migrate-3.0.1.min.js"></script>
+  <script src="{$_layoutParams.ruta_js}popper.min.js"></script>
+  <script src="{$_layoutParams.ruta_js}bootstrap.min.js"></script>
+  <script src="{$_layoutParams.ruta_js}jquery.easing.1.3.js"></script>
+  <script src="{$_layoutParams.ruta_js}jquery.waypoints.min.js"></script>
+  <script src="{$_layoutParams.ruta_js}jquery.stellar.min.js"></script>
+  <script src="{$_layoutParams.ruta_js}jquery.animateNumber.min.js"></script>
+  <script src="{$_layoutParams.ruta_js}bootstrap-datepicker.js"></script>
+  <script src="{$_layoutParams.ruta_js}jquery.timepicker.min.js"></script>
+  <script src="{$_layoutParams.ruta_js}owl.carousel.min.js"></script>
+  <script src="{$_layoutParams.ruta_js}jquery.magnific-popup.min.js"></script>
+  <script src="{$_layoutParams.ruta_js}scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{$_layoutParams.ruta_js}google-map.js"></script>
+  <script src="{$_layoutParams.ruta_js}main.js"></script>
+
   </body>
 </html>

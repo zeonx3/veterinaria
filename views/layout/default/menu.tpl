@@ -1,37 +1,23 @@
- <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand logo" href="{$_layoutParams.root}">GalgoPro</a>
-      </div>
-    
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="javascript:void();" class="disabled">{Session::get('usuario')}</a></li>
-          <li><a href="{$_layoutParams.root}index">Home</a></li>
-          <li><a href="#tf-service">Servicios</a></li>
-          <li><a href="#tf-portfolio">Portafolio</a></li>
-          <li><a href="#tf-about">Acerca de</a></li>
-          <li><a href="{$_layoutParams.root}contactos/add">Contacto</a></li>
-          {if Session::get('autenticado')}
-            {if Session::get('role')=='Administrador'}
-            <li><a href="{$_layoutParams.root}admin/">Administrar</a></li>
-            {/if}
-            <li><a href="{$_layoutParams.root}usuarios/cerrar">Cerrar Sesión</a></li>
-          {else}
-            <li><a href="{$_layoutParams.root}usuarios/login">Iniciar Sesión</a></li>
-          {/if}
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	<div class="container">
+	 	<a class="navbar-brand" href="{$_layoutParams.root}"><span class="flaticon-pawprint-1 mr-2"></span>Veterinaria</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="fa fa-bars"></span> Menu
+	  </button>
+	  <div class="collapse navbar-collapse" id="ftco-nav">
+	    <ul class="navbar-nav ml-auto">
+	     	<li class="nav-item active"><a href="{$_layoutParams.root}" class="nav-link">Home</a></li>
+	     	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	     	<li class="nav-item"><a href="vet.html" class="nav-link">Veterinarian</a></li>
+	     	<li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+	      <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+	      <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+	      <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+	      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	    </ul>
+	  </div>
+	</div>
+</nav>
 
 
 

@@ -6,14 +6,14 @@ class indexController extends Controller
 
 	public function __construct(){
 		parent::__construct();
-		
+
 	}
 
 	public function index()
 	{
-		
-		$this->_view->assign('titulo', 'Bienvenido a GalgoPro');
-		
+
+		$this->_view->assign('titulo', 'Bienvenido a Veterinaria');
+
 
 
 		$this->_view->renderizar('index');
