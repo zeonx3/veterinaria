@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2021-10-30 17:45:45
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2021-10-30 18:22:04
          compiled from "/var/www/html/veterinaria/views/layout/default/menu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1532248306617d9ce9657c26-62145106%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1f87b30caada294ec1af8d3e98b3dc6834d28c60' => 
     array (
       0 => '/var/www/html/veterinaria/views/layout/default/menu.tpl',
-      1 => 1635626742,
+      1 => 1635628845,
       2 => 'file',
     ),
   ),
@@ -34,13 +34,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	    <ul class="navbar-nav ml-auto">
 	     	<li class="nav-item active"><a href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
 " class="nav-link">Home</a></li>
-	     	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	     	<li class="nav-item"><a href="vet.html" class="nav-link">Veterinarian</a></li>
-	     	<li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-	      <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-	      <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-	      <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	      	<li class="nav-item"><a href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+admin/" class="nav-link">Administración</a></li>
 	    </ul>
 	  </div>
 	</div>

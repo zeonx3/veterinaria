@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2021-10-30 17:09:35
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2021-10-30 18:22:03
          compiled from "/var/www/html/veterinaria/views/layout/default/template.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1822792382617d9ce9449eb3-83751111%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a48162272a6924a8aec44820d4dc12a110fa26db' => 
     array (
       0 => '/var/www/html/veterinaria/views/layout/default/template.tpl',
-      1 => 1635624564,
+      1 => 1635628918,
       2 => 'file',
     ),
   ),
@@ -101,7 +101,7 @@ $_smarty_tpl->tpl_vars['js']->_loop = true;
     <?php echo $_smarty_tpl->getSubTemplate ("menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
-      <div class="row">
+      <div class="content">
             <noscript><p>Debe tener el soporte de Javascript habilitado</p></noscript>
             <?php if (isset($_smarty_tpl->tpl_vars['_error']->value)) {?>
               <div style="margin-top: 60px;"></div>

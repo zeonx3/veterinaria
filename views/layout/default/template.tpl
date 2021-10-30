@@ -49,7 +49,7 @@
     {include file="header.tpl"}
     {include file="menu.tpl"}
 
-      <div class="row">
+      <div class="content">
             <noscript><p>Debe tener el soporte de Javascript habilitado</p></noscript>
             {if isset($_error)}
               <div style="margin-top: 60px;"></div>
