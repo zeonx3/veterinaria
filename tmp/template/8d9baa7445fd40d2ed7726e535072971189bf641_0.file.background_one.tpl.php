@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0-rc.0, created on 2021-11-06 09:54:42
+/* Smarty version 4.0.0-rc.0, created on 2021-11-06 17:15:06
   from '/var/www/html/veterinaria/views/layout/default/background_one.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0-rc.0',
-  'unifunc' => 'content_61867b12bd7672_91588617',
+  'unifunc' => 'content_6186e24a75c2d0_11801980',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8d9baa7445fd40d2ed7726e535072971189bf641' => 
     array (
       0 => '/var/www/html/veterinaria/views/layout/default/background_one.tpl',
-      1 => 1635626471,
+      1 => 1636229702,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61867b12bd7672_91588617 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6186e24a75c2d0_11801980 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="hero-wrap js-fullheight" style="background-image: url('<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
 bg_1.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>

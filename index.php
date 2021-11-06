@@ -22,7 +22,9 @@ try{
 	require_once APP_PATH . 'Session.php';
 	require_once APP_PATH . 'Hash.php';
 
-	
+	//echo uniqid();
+	//exit;
+
 	Session::init();
 
 
