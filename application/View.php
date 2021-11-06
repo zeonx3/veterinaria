@@ -16,7 +16,7 @@ class View extends Smarty
 
 	public function renderizar($vista, $item = false)
 	{
-		//configuracion de los directorios de la libreria Smarty	
+		//configuracion de los directorios de la libreria Smarty
 		$this->template_dir = ROOT . 'views' . DS . 'layout' . DS . DEFAULT_LAYOUT . DS;
 		$this->config_dir = ROOT . 'views' . DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'configs' .DS;
 		$this->cache_dir = ROOT . 'tmp' . DS . 'cache' . DS;
@@ -25,9 +25,9 @@ class View extends Smarty
 		//configuracion de los menus de los templates o vistas
 		$menu = array(
 			array(
-			),	
+			),
 			array(
-				
+
 				)
 			);
 
@@ -67,7 +67,7 @@ class View extends Smarty
 			'js' => $js,
 			'root' => BASE_URL,
 			'configs' => array(
-				
+
 				)
 			);
 
@@ -77,7 +77,7 @@ class View extends Smarty
 			$this->assign('_contenido', $rutaWiev);
 		else:
 			throw new Exception("Error de vista");
-			
+
 		endif;
 
 		$this->assign('_acl', $this->_acl);
@@ -89,11 +89,11 @@ class View extends Smarty
 	{
 		if(is_array($js) && count($js)):
 			for($i = 0;$i < count($js);$i++ ):
-				$this->_js[] = BASE_URL . 'views/' . $this->_controlador . '/js/' . $js[$i] . '.js'; 
+				$this->_js[] = BASE_URL . 'views/' . $this->_controlador . '/js/' . $js[$i] . '.js';
 			endfor;
 		else:
 			throw new Exception("Error de js");
-			
+
 		endif;
-	} 
+	}
 }
