@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0-rc.0, created on 2021-11-06 09:54:41
+/* Smarty version 4.0.0-rc.0, created on 2021-11-08 20:24:03
   from '/var/www/html/veterinaria/views/layout/default/template.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0-rc.0',
-  'unifunc' => 'content_61867b11b7cfe8_71876866',
+  'unifunc' => 'content_6189bfa3a19198_21035420',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b2ecc8ed80c91b2df2f76b1b5a6e9ea4e9f74212' => 
     array (
       0 => '/var/www/html/veterinaria/views/layout/default/template.tpl',
-      1 => 1635628984,
+      1 => 1636417308,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:menu.tpl' => 1,
   ),
 ),false)) {
-function content_61867b11b7cfe8_71876866 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6189bfa3a19198_21035420 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
    <head>
@@ -101,17 +101,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
       <div class="content">
             <noscript><p>Debe tener el soporte de Javascript habilitado</p></noscript>
-            <?php if ((isset($_smarty_tpl->tpl_vars['_error']->value))) {?>
-              <div style="margin-top: 60px;"></div>
-              <p class="alert alert-danger"><?php echo $_smarty_tpl->tpl_vars['_error']->value;?>
-</p>
-            <?php }?>
-
-            <?php if ((isset($_smarty_tpl->tpl_vars['_mensaje']->value))) {?>
-              <div style="margin-top: 60px;"></div>
-              <p class="alert alert-success"><?php echo $_smarty_tpl->tpl_vars['_mensaje']->value;?>
-</p>
-            <?php }?>
 
             <?php $_smarty_tpl->_subTemplateRender($_smarty_tpl->tpl_vars['_contenido']->value, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>

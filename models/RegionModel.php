@@ -23,10 +23,31 @@ class RegionModel extends Model
         return $reg->fetch();
     }
 
+    public function getRegionNombre($nombre)
+    {
+        $reg = $this->_db->prepare("SELECT id FROM regiones WHERE nombre = ?");
+        $reg->bindParam(1, $nombre);
+        $reg->execute();
+
+        return $reg->fetch();
+    }
+
     public function addRegion($nombre)
     {
         $reg = $this->_db->prepare("INSERT INTO regiones(nombre) VALUES(?)");
         $reg->bindParam(1, $nombre);
+        $reg->execute();
+
+        $row = $reg->rowCount();
+
+        return $row;
+    }
+
+    public function editRegion($id, $nombre)
+    {
+        $reg = $this->_db->prepare("UPDATE regiones SET nombre = ? WHERE id = ?");
+        $reg->bindParam(1, $nombre);
+        $reg->bindParam(2, $id);
         $reg->execute();
 
         $row = $reg->rowCount();

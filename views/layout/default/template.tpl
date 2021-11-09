@@ -51,15 +51,6 @@
 
       <div class="content">
             <noscript><p>Debe tener el soporte de Javascript habilitado</p></noscript>
-            {if isset($_error)}
-              <div style="margin-top: 60px;"></div>
-              <p class="alert alert-danger">{$_error}</p>
-            {/if}
-
-            {if isset($_mensaje)}
-              <div style="margin-top: 60px;"></div>
-              <p class="alert alert-success">{$_mensaje}</p>
-            {/if}
 
             {include file=$_contenido}
           </div>
