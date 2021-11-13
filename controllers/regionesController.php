@@ -37,6 +37,8 @@ class regionesController extends Controller
 
         $this->_view->assign('titulo', 'Editar Region');
         $this->_view->assign('title', 'Editar Región');
+        $this->_view->assign('button','Editar');
+        $this->_view->assign('ruta','regiones/view/' . $this->filtrarInt($id));
         $this->_view->assign('region', $this->_regiones->getRegionId($this->filtrarInt($id)));
         $this->_view->assign('enviar', CTRL);
 
@@ -64,10 +66,12 @@ class regionesController extends Controller
     {
         $this->_view->assign('titulo', 'Nueva Region');
         $this->_view->assign('title', 'Nueva Región');
+        $this->_view->assign('button','Guardar');
+        $this->_view->assign('ruta','regiones/');
         $this->_view->assign('enviar', CTRL);
 
         if ($this->getAlphaNum('enviar') == CTRL) {
-            $this->_view->assign('datos', $_POST);
+            $this->_view->assign('region', $_POST);
 
             if (!$this->getSql('nombre') || strlen($this->getSql('nombre')) < 4) {
                 $this->_view->assign('_error','Ingrese un nombre de al menos 4 caracteres');

@@ -1,28 +1,28 @@
 <?php
-/* Smarty version 4.0.0-rc.0, created on 2021-11-13 15:57:23
-  from '/var/www/html/veterinaria/views/regiones/add.tpl' */
+/* Smarty version 4.0.0-rc.0, created on 2021-11-13 16:54:23
+  from '/var/www/html/veterinaria/views/comunas/add.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0-rc.0',
-  'unifunc' => 'content_619018a3448fc9_65932574',
+  'unifunc' => 'content_619025ff7cc315_61256320',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '86cf3f7069a337e958a5e5f5a212e285b5b8c93b' => 
+    'b66daab7e3392aae44869c490914ac89a5ca2ae6' => 
     array (
-      0 => '/var/www/html/veterinaria/views/regiones/add.tpl',
-      1 => 1636833438,
+      0 => '/var/www/html/veterinaria/views/comunas/add.tpl',
+      1 => 1636836796,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:../partials/_mensajes.tpl' => 1,
-    'file:../regiones/_form.tpl' => 1,
+    'file:../comunas/_form.tpl' => 1,
   ),
 ),false)) {
-function content_619018a3448fc9_65932574 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619025ff7cc315_61256320 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="ftco-section ftco-degree-bg">
     <div class="container">
         <div class="col-md-6 ftco-animate">
@@ -35,7 +35,7 @@ function content_619018a3448fc9_65932574 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 
                 <p class="text-danger">Campos obligatorios *</p>
-                <?php $_smarty_tpl->_subTemplateRender("file:../regiones/_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+                <?php $_smarty_tpl->_subTemplateRender("file:../comunas/_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
             </div>
         </div>

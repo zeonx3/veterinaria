@@ -20,6 +20,7 @@
                 </table>
                 <p>
                     <a href="{$_layoutParams.root}regiones/edit/{$region.id}" class="btn btn-outline-primary btn-sm">Editar</a>
+                    <a href="{$_layoutParams.root}comunas/add/{$region.id}" class="btn btn-outline-success btn-sm">Agregar Comuna</a>
                     <a href="{$_layoutParams.root}regiones/" class="btn btn-outline-primary btn-sm">Volver</a>
                 </p>
             </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0-rc.0, created on 2021-11-08 21:19:16
+/* Smarty version 4.0.0-rc.0, created on 2021-11-13 16:51:59
   from '/var/www/html/veterinaria/views/regiones/view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0-rc.0',
-  'unifunc' => 'content_6189cc9435a181_64488106',
+  'unifunc' => 'content_6190256fc2a301_98199015',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8280e051fda7d5efbae18799c0e77aa23fdc107a' => 
     array (
       0 => '/var/www/html/veterinaria/views/regiones/view.tpl',
-      1 => 1636420750,
+      1 => 1636836708,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../partials/_mensajes.tpl' => 1,
   ),
 ),false)) {
-function content_6189cc9435a181_64488106 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6190256fc2a301_98199015 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="ftco-section ftco-degree-bg">
     <div class="container">
         <div class="col-md-6 ftco-animate">
@@ -50,6 +50,9 @@ function content_6189cc9435a181_64488106 (Smarty_Internal_Template $_smarty_tpl)
                     <a href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
 regiones/edit/<?php echo $_smarty_tpl->tpl_vars['region']->value['id'];?>
 " class="btn btn-outline-primary btn-sm">Editar</a>
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+comunas/add/<?php echo $_smarty_tpl->tpl_vars['region']->value['id'];?>
+" class="btn btn-outline-success btn-sm">Agregar Comuna</a>
                     <a href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
 regiones/" class="btn btn-outline-primary btn-sm">Volver</a>
                 </p>

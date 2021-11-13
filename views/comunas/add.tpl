@@ -8,7 +8,7 @@
                 {include file="../partials/_mensajes.tpl"}
 
                 <p class="text-danger">Campos obligatorios *</p>
-                {include file="../regiones/_form.tpl"}
+                {include file="../comunas/_form.tpl"}
             </div>
         </div>
     </div>
