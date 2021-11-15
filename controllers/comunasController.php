@@ -13,6 +13,8 @@ class comunasController extends Controller
 
     public function index()
     {
+        $this->verificarMensajes();
+
         $this->_view->assign('titulo', 'Comunas');
         $this->_view->assign('title', 'Comunas');
         $this->_view->assign('comunas', $this->_comunas->getComunas());
@@ -21,7 +23,13 @@ class comunasController extends Controller
 
     public function view($id = null)
     {
-        # code...
+        $this->verificarComuna($id);
+        $this->verificarMensajes();
+
+        $this->_view->assign('titulo', 'Comuna');
+        $this->_view->assign('title', 'Comuna');
+        $this->_view->assign('comuna', $this->_comunas->getComunaId($this->filtrarInt($id)));
+        $this->_view->renderizar('view');
     }
 
     public function edit($id = null)
@@ -29,15 +37,14 @@ class comunasController extends Controller
         # code...
     }
 
-    public function add($region = null)
+    public function add()
     {
-        $this->verificarRegion($region);
 
         $this->_view->assign('titulo', 'Nueva Comuna');
         $this->_view->assign('title', 'Nueva Comuna');
         $this->_view->assign('button', 'Guardar');
-        $this->_view->assign('ruta', 'regiones/view/' . $this->filtrarInt($region));
-        $this->_view->assign('region', $this->_regiones->getRegionId($this->filtrarInt($region)));
+        $this->_view->assign('ruta', 'comunas');
+        $this->_view->assign('regiones', $this->_regiones->getRegiones());
         $this->_view->assign('enviar', CTRL);
 
         if ($this->getAlphaNum('enviar') == CTRL) {
@@ -45,6 +52,12 @@ class comunasController extends Controller
 
             if (!$this->getSql('nombre') || strlen($this->getSql('nombre')) < 4) {
                 $this->_view->assign('_error','El nombre debe tener al menos 4 caracteres');
+                $this->_view->renderizar('add');
+                exit;
+            }
+
+            if (!$this->getInt('region')) {
+                $this->_view->assign('_error','Seleccione una región');
                 $this->_view->renderizar('add');
                 exit;
             }
@@ -57,10 +70,10 @@ class comunasController extends Controller
                 exit;
             }
 
-            $comuna = $this->_comunas->addComuna($this->getSql('nombre'), $this->filtrarInt($region));
+            $comuna = $this->_comunas->addComuna($this->getSql('nombre'), $this->getInt('region'));
 
             if ($comuna) {
-                Session::set('msg_success','La comuna se ha registrado correctmente');
+                Session::set('msg_success','La comuna se ha registrado correctamente');
             }else {
                 Session::set('msg_error', 'La comuna no se ha registrado... intente nuevamente');
             }
@@ -73,19 +86,19 @@ class comunasController extends Controller
 
     ###########################################################
      /*
-    * metodo que comprueba el id de una region
-    * @param int $region
-    * redirecciona regiones/index
+    * metodo que comprueba el id de una comuna
+    * @param int $id
+    * redirecciona comunas/index
     */
 
-    private function verificarRegion($id)
+    private function verificarComuna($id)
     {
         if (!$this->filtrarInt($id)) {
-            $this->redireccionar('regiones');
+            $this->redireccionar('comunas');
         }
 
-        if (!$this->_regiones->getRegionId($this->filtrarInt($id))) {
-            $this->redireccionar('regiones');
+        if (!$this->_comunas->getComunaId($this->filtrarInt($id))) {
+            $this->redireccionar('comunas');
         }
     }
 }

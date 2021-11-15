@@ -10,17 +10,18 @@
 
                 <table class="table table-hover">
                     <tr>
-                        <th>Id:</th>
-                        <td>{$region.id}</td>
+                        <th>Comuna:</th>
+                        <td>{$comuna.nombre}</td>
                     </tr>
                     <tr>
                         <th>Región:</th>
-                        <td>{$region.nombre}</td>
+                        <td>{$comuna.region}</td>
                     </tr>
                 </table>
                 <p>
-                    <a href="{$_layoutParams.root}regiones/edit/{$region.id}" class="btn btn-outline-primary btn-sm">Editar</a>
-                    <a href="{$_layoutParams.root}regiones/" class="btn btn-outline-primary btn-sm">Volver</a>
+                    <a href="{$_layoutParams.root}comunas/edit/{$comuna.id}"
+                        class="btn btn-outline-primary btn-sm">Editar</a>
+                    <a href="{$_layoutParams.root}comunas/" class="btn btn-outline-primary btn-sm">Volver</a>
                 </p>
             </div>
         </div>

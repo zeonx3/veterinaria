@@ -4,7 +4,7 @@
             <div class="sidebar-box ftco-animate">
                 <h3>
                     {$title}
-
+                    <a href="{$_layoutParams.root}comunas/add" class="btn btn-outline-success btn-sm">Agregar Comuna</a>
                 </h3>
 
                 {include file="../partials/_mensajes.tpl"}
@@ -17,10 +17,10 @@
                         </tr>
                         {foreach from=$comunas item=comuna}
                             <tr>
-                                <td></td>
                                 <td>
-
+                                    <a href="{$_layoutParams.root}comunas/view/{$comuna.id}">{$comuna.nombre}</a>
                                 </td>
+                                <td>{$comuna.region}</td>
                             </tr>
                         {/foreach}
                     </table>

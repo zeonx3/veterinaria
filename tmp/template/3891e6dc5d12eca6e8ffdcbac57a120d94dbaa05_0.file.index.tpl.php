@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0-rc.0, created on 2021-11-13 17:01:22
+/* Smarty version 4.0.0-rc.0, created on 2021-11-15 19:25:00
   from '/var/www/html/veterinaria/views/comunas/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0-rc.0',
-  'unifunc' => 'content_619027a2dd9177_10773045',
+  'unifunc' => 'content_6192ec4c6f17a4_58925667',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3891e6dc5d12eca6e8ffdcbac57a120d94dbaa05' => 
     array (
       0 => '/var/www/html/veterinaria/views/comunas/index.tpl',
-      1 => 1636837278,
+      1 => 1637018693,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../partials/_mensajes.tpl' => 1,
   ),
 ),false)) {
-function content_619027a2dd9177_10773045 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6192ec4c6f17a4_58925667 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="ftco-section ftco-degree-bg">
     <div class="container">
         <div class="col-md-6 ftco-animate">
@@ -29,7 +29,8 @@ function content_619027a2dd9177_10773045 (Smarty_Internal_Template $_smarty_tpl)
                 <h3>
                     <?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 
-
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+comunas/add" class="btn btn-outline-success btn-sm">Agregar Comuna</a>
                 </h3>
 
                 <?php $_smarty_tpl->_subTemplateRender("file:../partials/_mensajes.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -48,10 +49,14 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['comuna']->value)
 $_smarty_tpl->tpl_vars['comuna']->do_else = false;
 ?>
                             <tr>
-                                <td></td>
                                 <td>
-
+                                    <a href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+comunas/view/<?php echo $_smarty_tpl->tpl_vars['comuna']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['comuna']->value['nombre'];?>
+</a>
                                 </td>
+                                <td><?php echo $_smarty_tpl->tpl_vars['comuna']->value['region'];?>
+</td>
                             </tr>
                         <?php
 }

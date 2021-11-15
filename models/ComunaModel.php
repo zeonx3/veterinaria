@@ -8,12 +8,18 @@ class ComunaModel extends Model
 
     public function getComunas()
     {
-        # code...
+        $com = $this->_db->query("SELECT c.id, c.nombre, r.nombre as region FROM comunas c INNER JOIN regiones r ON c.region_id = r.id ORDER BY c.nombre");
+
+        return $com->fetchall();
     }
 
     public function getComunaId($id)
     {
-        # code...
+        $com = $this->_db->prepare("SELECT c.id, c.nombre, c.region_id, r.nombre as region FROM comunas c INNER JOIN regiones r ON c.region_id = r.id WHERE c.id = ?");
+        $com->bindParam(1, $id);
+        $com->execute();
+
+        return $com->fetch();
     }
 
     public function getComunaNombre($nombre)
