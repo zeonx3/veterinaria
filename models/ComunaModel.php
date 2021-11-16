@@ -31,6 +31,16 @@ class ComunaModel extends Model
         return $com->fetch();
     }
 
+    public function getComunaRegion($comuna, $region)
+    {
+        $com = $this->_db->prepare("SELECT id FROM comunas WHERE nombre = ? AND region_id = ?");
+        $com->bindParam(1, $comuna);
+        $com->bindParam(2, $region);
+        $com->execute();
+
+        return $com->fetch();
+    }
+
     public function getComunasRegion($region)
     {
         # code...
@@ -47,8 +57,15 @@ class ComunaModel extends Model
         return $row;
     }
 
-    public function editRegion($id, $nombre, $region)
+    public function editComuna($id, $nombre, $region)
     {
-        # code...
+        $com = $this->_db->prepare("UPDATE comunas SET nombre = ?, region_id = ? WHERE id = ?");
+        $com->bindParam(1, $nombre);
+        $com->bindParam(2, $region);
+        $com->bindParam(3, $id);
+        $com->execute();
+
+        $row = $com->rowCount();
+        return $row;
     }
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0-rc.0, created on 2021-11-15 19:19:26
+/* Smarty version 4.0.0-rc.0, created on 2021-11-15 20:44:56
   from '/var/www/html/veterinaria/views/comunas/_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0-rc.0',
-  'unifunc' => 'content_6192eafed49c62_20879116',
+  'unifunc' => 'content_6192ff0867a297_35363190',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '18920f0a73dc3eb6c6e31950d6ec539c97219ecf' => 
     array (
       0 => '/var/www/html/veterinaria/views/comunas/_form.tpl',
-      1 => 1637018231,
+      1 => 1637023492,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6192eafed49c62_20879116 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6192ff0867a297_35363190 (Smarty_Internal_Template $_smarty_tpl) {
 ?><form action="" method="post">
     <div class="mb-3">
         <label for="name" class="label text-success" style="font-weight: bold; font-size: 14px;">Nombre <span
@@ -32,6 +32,12 @@ function content_6192eafed49c62_20879116 (Smarty_Internal_Template $_smarty_tpl)
     <div class="mb-3">
         <label for="name" class="label text-success" style="font-weight: bold; font-size: 14px;">Región <span class="text-danger">*</span></label>
         <select name="region" class="form-control" id="">
+            <?php if ($_smarty_tpl->tpl_vars['button']->value == 'Editar') {?>
+                <option value="<?php echo $_smarty_tpl->tpl_vars['comuna']->value['region_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['comuna']->value['region'];?>
+</option>
+            <?php }?>
+
             <option value="">Seleccione...</option>
             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['regiones']->value, 'region');
