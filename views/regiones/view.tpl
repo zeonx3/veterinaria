@@ -17,6 +17,14 @@
                         <th>Región:</th>
                         <td>{$region.nombre}</td>
                     </tr>
+                    <tr>
+                        <th>Creado:</th>
+                        <td>{$region.created_at|date_format:"%d-%m-%Y %H:%M:%S"}</td>
+                    </tr>
+                    <tr>
+                        <th>Creado:</th>
+                        <td>{$region.updated_at|date_format:"%d-%m-%Y %H:%M:%S"}</td>
+                    </tr>
                 </table>
                 <p>
                     <a href="{$_layoutParams.root}regiones/edit/{$region.id}" class="btn btn-outline-primary btn-sm">Editar</a>

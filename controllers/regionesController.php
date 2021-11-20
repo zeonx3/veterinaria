@@ -1,13 +1,11 @@
 <?php
+use models\Region;
 
 class regionesController extends Controller
 {
-    private $_regiones;
-
-    public function __construct()
+   public function __construct()
     {
         parent::__construct();
-        $this->_regiones = $this->loadModel('Region');
     }
 
     public function index()
@@ -16,7 +14,7 @@ class regionesController extends Controller
 
         $this->_view->assign('titulo','Regiones');
         $this->_view->assign('title','Regiones');
-        $this->_view->assign('regiones', $this->_regiones->getRegiones());
+        $this->_view->assign('regiones', Region::select('id','nombre')->orderBy('nombre')->get());
         $this->_view->renderizar('index');
     }
 
@@ -27,7 +25,7 @@ class regionesController extends Controller
 
         $this->_view->assign('titulo','Regiones');
         $this->_view->assign('title','Regiones');
-        $this->_view->assign('region', $this->_regiones->getRegionId($this->filtrarInt($id)));
+        $this->_view->assign('region', Region::find($this->filtrarInt($id)));
         $this->_view->renderizar('view');
     }
 
@@ -39,7 +37,7 @@ class regionesController extends Controller
         $this->_view->assign('title', 'Editar Región');
         $this->_view->assign('button','Editar');
         $this->_view->assign('ruta','regiones/view/' . $this->filtrarInt($id));
-        $this->_view->assign('region', $this->_regiones->getRegionId($this->filtrarInt($id)));
+        $this->_view->assign('region', Region::find($this->filtrarInt($id)));
         $this->_view->assign('enviar', CTRL);
 
         if ($this->getAlphaNum('enviar') == CTRL) {
@@ -50,11 +48,12 @@ class regionesController extends Controller
                 exit;
             }
 
-            $region = $this->_regiones->editRegion($this->filtrarInt($id), $this->getSql('nombre'));
+            $region = Region::find($this->filtrarInt($id));
+            $region->nombre = $this->getSql('nombre');
+            $region->save();
 
-            if ($region) {
-                Session::set('msg_success','La región se ha modificado correctamente');
-            }
+
+            Session::set('msg_success','La región se ha modificado correctamente');
 
             $this->redireccionar('regiones/view/' . $this->filtrarInt($id));
         }
@@ -79,7 +78,7 @@ class regionesController extends Controller
                 exit;
             }
 
-            $region = $this->_regiones->getRegionNombre($this->getSql('nombre'));
+            $region = Region::select('id')->where('nombre', $this->getSql('nombre'))->first();
 
             if ($region) {
                 $this->_view->assign('_error', 'La región ingresada ya existe... intente con otra');
@@ -87,11 +86,11 @@ class regionesController extends Controller
                 exit;
             }
 
-            $region = $this->_regiones->addRegion($this->getSql('nombre'));
+            $region = new Region;
+            $region->nombre = $this->getSql('nombre');
+            $region->save();
 
-            if ($region) {
-                Session::set('msg_success','La región se ha registrado correctamente');
-            }
+            Session::set('msg_success','La región se ha registrado correctamente');
 
             $this->redireccionar('regiones');
         }
@@ -112,7 +111,9 @@ class regionesController extends Controller
             $this->redireccionar('regiones');
         }
 
-        if (!$this->_regiones->getRegionId($this->filtrarInt($id))) {
+        $region = Region::select('id')->find($this->filtrarInt($id));
+
+        if (!$region) {
             $this->redireccionar('regiones');
         }
     }
