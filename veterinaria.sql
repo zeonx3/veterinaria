@@ -26,8 +26,10 @@ CREATE TABLE `comunas` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
   `region_id` int NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +38,7 @@ CREATE TABLE `comunas` (
 
 LOCK TABLES `comunas` WRITE;
 /*!40000 ALTER TABLE `comunas` DISABLE KEYS */;
-INSERT INTO `comunas` VALUES (1,'Temuco',2),(2,'Concepción',3),(3,'San Miguel',1),(4,'Recoleta',1);
+INSERT INTO `comunas` VALUES (1,'Temuco',2,'2021-11-20 17:06:32','2021-11-20 17:06:32'),(2,'Concepción',3,'2021-11-20 17:06:32','2021-11-20 17:37:36'),(3,'San Miguel',1,'2021-11-20 17:06:32','2021-11-20 17:06:32'),(4,'Recoleta',1,'2021-11-20 17:06:32','2021-11-20 17:06:32'),(5,'Paine',1,'2021-11-20 17:35:24','2021-11-20 17:35:57');
 /*!40000 ALTER TABLE `comunas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,8 +81,10 @@ DROP TABLE IF EXISTS `regiones`;
 CREATE TABLE `regiones` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,8 +93,33 @@ CREATE TABLE `regiones` (
 
 LOCK TABLES `regiones` WRITE;
 /*!40000 ALTER TABLE `regiones` DISABLE KEYS */;
-INSERT INTO `regiones` VALUES (1,'Metropolitana de Santiago'),(2,'De la Araucania'),(3,'Del Biobio');
+INSERT INTO `regiones` VALUES (1,'Metropolitana de Santiago','2021-11-20 17:07:34','2021-11-20 17:07:34'),(2,'De la Araucania','2021-11-20 17:07:34','2021-11-20 17:07:34'),(3,'Del Biobio','2021-11-20 17:07:34','2021-11-20 17:07:34'),(4,'Del Maule','2021-11-20 16:34:44','2021-11-20 17:38:03');
 /*!40000 ALTER TABLE `regiones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `servicio_tipos`
+--
+
+DROP TABLE IF EXISTS `servicio_tipos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `servicio_tipos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `servicio_tipos`
+--
+
+LOCK TABLES `servicio_tipos` WRITE;
+/*!40000 ALTER TABLE `servicio_tipos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `servicio_tipos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -102,4 +131,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-15 22:47:11
+-- Dump completed on 2021-11-20 17:59:40
