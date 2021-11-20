@@ -15,7 +15,15 @@
                     </tr>
                     <tr>
                         <th>Región:</th>
-                        <td>{$comuna.region}</td>
+                        <td>{$comuna.region.nombre}</td>
+                    </tr>
+                    <tr>
+                        <th>Creado:</th>
+                        <td>{$comuna.created_at|date_format:"%d-%m-%Y %H:%M:%S"}</td>
+                    </tr>
+                    <tr>
+                        <th>Modificdo:</th>
+                        <td>{$comuna.updated_at|date_format:"%d-%m-%Y %H:%M:%S"}</td>
                     </tr>
                 </table>
                 <p>

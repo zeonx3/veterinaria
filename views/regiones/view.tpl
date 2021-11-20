@@ -22,7 +22,7 @@
                         <td>{$region.created_at|date_format:"%d-%m-%Y %H:%M:%S"}</td>
                     </tr>
                     <tr>
-                        <th>Creado:</th>
+                        <th>Modificado:</th>
                         <td>{$region.updated_at|date_format:"%d-%m-%Y %H:%M:%S"}</td>
                     </tr>
                 </table>

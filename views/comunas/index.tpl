@@ -20,7 +20,7 @@
                                 <td>
                                     <a href="{$_layoutParams.root}comunas/view/{$comuna.id}">{$comuna.nombre}</a>
                                 </td>
-                                <td>{$comuna.region}</td>
+                                <td>{$comuna.region.nombre}</td>
                             </tr>
                         {/foreach}
                     </table>

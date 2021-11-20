@@ -9,7 +9,7 @@
         <label for="name" class="label text-success" style="font-weight: bold; font-size: 14px;">Región <span class="text-danger">*</span></label>
         <select name="region" class="form-control" id="">
             {if $button == 'Editar'}
-                <option value="{$comuna.region_id}">{$comuna.region}</option>
+                <option value="{$comuna.region_id}">{$comuna.region.nombre}</option>
             {/if}
 
             <option value="">Seleccione...</option>

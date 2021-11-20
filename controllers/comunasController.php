@@ -1,14 +1,12 @@
 <?php
+use models\Comuna;
+use models\Region;
+
 class comunasController extends Controller
 {
-    private $_comunas;
-    private $_regiones;
-
     public function __construct()
     {
         parent::__construct();
-        $this->_regiones = $this->loadModel('Region');
-        $this->_comunas = $this->loadModel('Comuna');
     }
 
     public function index()
@@ -17,7 +15,7 @@ class comunasController extends Controller
 
         $this->_view->assign('titulo', 'Comunas');
         $this->_view->assign('title', 'Comunas');
-        $this->_view->assign('comunas', $this->_comunas->getComunas());
+        $this->_view->assign('comunas', Comuna::with('region')->orderBy('nombre')->get());
         $this->_view->renderizar('index');
     }
 
@@ -28,7 +26,7 @@ class comunasController extends Controller
 
         $this->_view->assign('titulo', 'Comuna');
         $this->_view->assign('title', 'Comuna');
-        $this->_view->assign('comuna', $this->_comunas->getComunaId($this->filtrarInt($id)));
+        $this->_view->assign('comuna', Comuna::find($this->filtrarInt($id)));
         $this->_view->renderizar('view');
     }
 
@@ -40,8 +38,8 @@ class comunasController extends Controller
         $this->_view->assign('title', 'Editar Comuna');
         $this->_view->assign('button', 'Editar');
         $this->_view->assign('ruta', 'comunas/view/' . $this->filtrarInt($id));
-        $this->_view->assign('comuna', $this->_comunas->getComunaId($this->filtrarInt($id)));
-        $this->_view->assign('regiones', $this->_regiones->getRegiones());
+        $this->_view->assign('comuna', Comuna::find($this->filtrarInt($id)));
+        $this->_view->assign('regiones', Region::select('id','nombre')->orderBy('nombre')->get());
         $this->_view->assign('enviar', CTRL);
 
         if ($this->getAlphaNum('enviar') == CTRL) {
@@ -58,7 +56,7 @@ class comunasController extends Controller
                 exit;
             }
 
-            $comuna = $this->_comunas->getComunaRegion($this->getSql('nombre'), $this->getInt('region'));
+            $comuna = Comuna::select('id')->where('nombre', $this->getSql('nombre'))->where('region_id', $this->getInt('region'))->first();
 
             if ($comuna) {
                 $this->_view->assign('_error','La comuna y la region ingresadas ya existen... intente con otra combinación');
@@ -66,17 +64,12 @@ class comunasController extends Controller
                 exit;
             }
 
-            $comuna = $this->_comunas->editComuna(
-                $this->filtrarInt($id),
-                $this->getSql('nombre'),
-                $this->getInt('region')
-            );
+            $comuna = Comuna::find($this->filtrarInt($id));
+            $comuna->nombre = $this->getSql('nombre');
+            $comuna->region_id = $this->getInt('region');
+            $comuna->save();
 
-            if ($comuna) {
-                Session::set('msg_success','La comuna se ha modificado correctamente');
-            }else {
-                Session::set('msg_error', 'La comuna no se ha modificado... intente nuevamente');
-            }
+            Session::set('msg_success','La comuna se ha modificado correctamente');
 
             $this->redireccionar('comunas/view/' . $this->filtrarInt($id));
         }
@@ -91,7 +84,7 @@ class comunasController extends Controller
         $this->_view->assign('title', 'Nueva Comuna');
         $this->_view->assign('button', 'Guardar');
         $this->_view->assign('ruta', 'comunas');
-        $this->_view->assign('regiones', $this->_regiones->getRegiones());
+        $this->_view->assign('regiones', Region::select('id','nombre')->orderBy('nombre')->get());
         $this->_view->assign('enviar', CTRL);
 
         if ($this->getAlphaNum('enviar') == CTRL) {
@@ -109,7 +102,7 @@ class comunasController extends Controller
                 exit;
             }
 
-            $comuna = $this->_comunas->getComunaNombre($this->getSql('nombre'));
+            $comuna = Comuna::select('id')->where('nombre', $this->getSql('nombre'))->first();
 
             if ($comuna) {
                 $this->_view->assign('_error','La comuna ingresada y existe... intente con otra');
@@ -117,13 +110,12 @@ class comunasController extends Controller
                 exit;
             }
 
-            $comuna = $this->_comunas->addComuna($this->getSql('nombre'), $this->getInt('region'));
+            $comuna = new Comuna;
+            $comuna->nombre = $this->getSql('nombre');
+            $comuna->region_id = $this->getInt('region');
+            $comuna->save();
 
-            if ($comuna) {
-                Session::set('msg_success','La comuna se ha registrado correctamente');
-            }else {
-                Session::set('msg_error', 'La comuna no se ha registrado... intente nuevamente');
-            }
+            Session::set('msg_success','La comuna se ha registrado correctamente');
 
             $this->redireccionar('comunas');
         }
@@ -144,7 +136,9 @@ class comunasController extends Controller
             $this->redireccionar('comunas');
         }
 
-        if (!$this->_comunas->getComunaId($this->filtrarInt($id))) {
+        $comuna = Comuna::select('id')->find($this->filtrarInt($id));
+
+        if (!$comuna) {
             $this->redireccionar('comunas');
         }
     }

@@ -1,25 +1,30 @@
 <?php
+use models\Funcionario;
+use models\Comuna;
+
 class funcionariosController extends Controller
 {
-    private $_funcionarios;
-
     public function __construct()
     {
         parent::__construct();
-        $this->_funcionarios = $this->loadModel('Funcionario');
     }
 
     public function index()
     {
         $this->_view->assign('titulo','Funcionarios');
         $this->_view->assign('title','Funcionarios');
-        $this->_view->assign('funcionarios', $this->_funcionarios->getFuncionarios());
+        $this->_view->assign('funcionarios', Funcionario::with('comuna')->orderBy('id','DESC')->get());
         $this->_view->renderizar('index');
     }
 
     public function view($id = null)
     {
-        # code...
+        $this->verificarFuncionario($id);
+
+        $this->_view->assign('titulo','Funcionarios');
+        $this->_view->assign('title','Funcionarios');
+        $this->_view->assign('funcionario', Funcionario::with('comuna')->find($this->filtrarInt($id)));
+        $this->_view->renderizar('view');
     }
 
     public function edit($id = null)
@@ -44,7 +49,9 @@ class funcionariosController extends Controller
             $this->redireccionar('funcionarios');
         }
 
-        if (!$this->_funcionarios->getFuncionarioId($this->filtrarInt($id))) {
+        $funcionario = Funcionario::select('id')->find($this->filtrarInt($id));
+
+        if (!$funcionario) {
             $this->redireccionar('funcionarios');
         }
     }
