@@ -34,7 +34,16 @@ class funcionariosController extends Controller
 
     public function add()
     {
-        # code...
+        $this->_view->assign('titulo','Nuevo Funcionario');
+        $this->_view->assign('title','Nuevo Funcionario');
+        $this->_view->assign('comunas', Comuna::select('id','nombre')->orderBy('nombre')->get());
+        $this->_view->assign('button', 'Guardar');
+        $this->_view->assign('ruta', 'funcionarios');
+        $this->_view->assign('enviar', CTRL);
+
+
+
+        $this->_view->renderizar('add');
     }
 
     ######################################################
