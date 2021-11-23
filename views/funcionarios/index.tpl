@@ -1,6 +1,6 @@
 <section class="ftco-section ftco-degree-bg">
     <div class="container">
-        <div class="col-md-6 ftco-animate">
+        <div class="col-md-8 ftco-animate">
             <div class="sidebar-box ftco-animate">
                 <h3>
                     {$title}
@@ -19,10 +19,10 @@
                         {foreach from=$funcionarios item=funcionario}
                             <tr>
                                 <td>
-                                    <a href="{$_layoutParams.root}funcionarios/view/{$Funcionario.id}">{$funcionario.nombre}</a>
+                                    <a href="{$_layoutParams.root}funcionarios/view/{$funcionario.id}">{$funcionario.nombre}</a>
                                 </td>
                                 <td>{$funcionario.email}</td>
-                                <td>{$funcionario.comuna}</td>
+                                <td>{$funcionario.comuna.nombre}</td>
                             </tr>
                         {/foreach}
                     </table>
