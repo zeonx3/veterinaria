@@ -12,4 +12,9 @@ class Funcionario extends Model
     {
         return $this->belongsTo(Comuna::class);
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Rol::class);
+    }
 }

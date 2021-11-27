@@ -38,7 +38,7 @@
                         <td>{$funcionario.created_at|date_format:"%d-%m-%Y %H:%M:%S"}</td>
                     </tr>
                     <tr>
-                        <th>Modificdo:</th>
+                        <th>Modificado:</th>
                         <td>{$funcionario.updated_at|date_format:"%d-%m-%Y %H:%M:%S"}</td>
                     </tr>
                 </table>

@@ -7,4 +7,9 @@ class Rol extends Model
 {
     protected $table = 'roles';
     protected $fillable = ['nombre'];
+
+    public function funcionarios()
+    {
+        return $this->belongsToMany(Funcionario::class);
+    }
 }
