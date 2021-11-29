@@ -43,6 +43,32 @@ INSERT INTO `comunas` VALUES (1,'Temuco',2,'2021-11-20 17:06:32','2021-11-20 17:
 UNLOCK TABLES;
 
 --
+-- Table structure for table `funcionario_rol`
+--
+
+DROP TABLE IF EXISTS `funcionario_rol`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `funcionario_rol` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `funcionario_id` int NOT NULL,
+  `rol_id` int NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `funcionario_rol`
+--
+
+LOCK TABLES `funcionario_rol` WRITE;
+/*!40000 ALTER TABLE `funcionario_rol` DISABLE KEYS */;
+/*!40000 ALTER TABLE `funcionario_rol` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `funcionarios`
 --
 
@@ -68,7 +94,7 @@ CREATE TABLE `funcionarios` (
 
 LOCK TABLES `funcionarios` WRITE;
 /*!40000 ALTER TABLE `funcionarios` DISABLE KEYS */;
-INSERT INTO `funcionarios` VALUES (1,'16800356-9','Gabriela Nuñez','gabriela.nunez@hotmail.com','San Martin 3345',1,'2021-11-22 21:27:08','2021-11-22 22:14:03');
+INSERT INTO `funcionarios` VALUES (1,'16800356-9','Gabriela Nuñez Espinoza','gabriela.nunez@hotmail.com','San Martin 3345',1,'2021-11-22 21:27:08','2021-11-27 17:09:21');
 /*!40000 ALTER TABLE `funcionarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,7 +137,7 @@ CREATE TABLE `roles` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,6 +146,7 @@ CREATE TABLE `roles` (
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` VALUES (1,'Administrador','2021-11-27 17:34:45','2021-11-27 17:45:30');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,4 +184,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-22 22:48:29
+-- Dump completed on 2021-11-29 19:28:29
