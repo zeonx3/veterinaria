@@ -22,4 +22,9 @@ class Funcionario extends Model
     {
         return $this->hasMany(FuncionarioRol::class);
     }
+
+    public function usuario()
+    {
+        return $this->hasOne(Usuario::class);
+    }
 }
