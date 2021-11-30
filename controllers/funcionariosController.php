@@ -1,6 +1,7 @@
 <?php
 use models\Funcionario;
 use models\Comuna;
+use models\FuncionarioRol;
 
 class funcionariosController extends Controller
 {
@@ -26,7 +27,8 @@ class funcionariosController extends Controller
 
         $this->_view->assign('titulo','Funcionarios');
         $this->_view->assign('title','Funcionarios');
-        $this->_view->assign('funcionario', Funcionario::with('comuna')->find($this->filtrarInt($id)));
+        $this->_view->assign('funcionario', Funcionario::with(['comuna','roles'])->find($this->filtrarInt($id)));
+        $this->_view->assign('roles', FuncionarioRol::with('rol')->where('funcionario_id', $this->filtrarInt($id))->get());
         $this->_view->renderizar('view');
     }
 

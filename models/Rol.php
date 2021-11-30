@@ -12,4 +12,9 @@ class Rol extends Model
     {
         return $this->belongsToMany(Funcionario::class);
     }
+
+    public function funcionarioRol()
+    {
+        return $this->hasMany(FuncionarioRol::class);
+    }
 }

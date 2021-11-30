@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0-rc.0, created on 2021-11-08 20:24:03
+/* Smarty version 4.0.0-rc.0, created on 2021-11-29 21:55:20
   from '/var/www/html/veterinaria/views/layout/default/template.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0-rc.0',
-  'unifunc' => 'content_6189bfa3a19198_21035420',
+  'unifunc' => 'content_61a5767886b321_00039084',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b2ecc8ed80c91b2df2f76b1b5a6e9ea4e9f74212' => 
     array (
       0 => '/var/www/html/veterinaria/views/layout/default/template.tpl',
-      1 => 1636417308,
+      1 => 1638233699,
       2 => 'file',
     ),
   ),
@@ -22,13 +22,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:menu.tpl' => 1,
   ),
 ),false)) {
-function content_6189bfa3a19198_21035420 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61a5767886b321_00039084 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
    <head>
    	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo (($tmp = $_smarty_tpl->tpl_vars['titulo']->value ?? null)===null||$tmp==='' ? "Sin Titulo" ?? null : $tmp);?>
+    <title><?php echo (($tmp = $_smarty_tpl->tpl_vars['titulo']->value ?? null)===null||$tmp==='' ? "Veterinaria" ?? null : $tmp);?>
 </title>
     <meta name="description" content="Your Description Here">
     <meta name="keywords" content="bootstrap themes, portfolio, responsive theme">
@@ -61,7 +61,10 @@ style.css">
 
 
 
-
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_js'];?>
+funciones.js"><?php echo '</script'; ?>
+>
 
 
      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

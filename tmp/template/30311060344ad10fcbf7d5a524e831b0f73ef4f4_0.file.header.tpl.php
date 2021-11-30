@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0-rc.0, created on 2021-11-06 09:54:42
+/* Smarty version 4.0.0-rc.0, created on 2021-11-29 21:35:55
   from '/var/www/html/veterinaria/views/layout/default/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0-rc.0',
-  'unifunc' => 'content_61867b1297a324_33128595',
+  'unifunc' => 'content_61a571eb291713_77173984',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '30311060344ad10fcbf7d5a524e831b0f73ef4f4' => 
     array (
       0 => '/var/www/html/veterinaria/views/layout/default/header.tpl',
-      1 => 1635623912,
+      1 => 1638232126,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61867b1297a324_33128595 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61a571eb291713_77173984 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
 	<div class="container">
 		<div class="row">

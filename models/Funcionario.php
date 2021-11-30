@@ -17,4 +17,9 @@ class Funcionario extends Model
     {
         return $this->belongsToMany(Rol::class);
     }
+
+    public function funcionarioRol()
+    {
+        return $this->hasMany(FuncionarioRol::class);
+    }
 }

@@ -3,7 +3,7 @@
    <head>
    	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{$titulo|default:"Sin Titulo"}</title>
+    <title>{$titulo|default:"Veterinaria"}</title>
     <meta name="description" content="Your Description Here">
     <meta name="keywords" content="bootstrap themes, portfolio, responsive theme">
       <!-- Favicons
@@ -27,7 +27,7 @@
 
 
 
-
+    <script src="{$_layoutParams.ruta_js}funciones.js"></script>
 
 
      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
