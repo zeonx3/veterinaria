@@ -6,10 +6,12 @@ class rolesController extends Controller
     public function __construct()
     {
         parent::__construct();
+        $this->verificarSession();
     }
 
     public function index()
     {
+
         $this->verificarMensajes();
 
         $this->_view->assign('titulo','Roles');

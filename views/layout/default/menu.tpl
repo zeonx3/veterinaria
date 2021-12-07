@@ -8,6 +8,11 @@
 	    <ul class="navbar-nav ml-auto">
 	     	<li class="nav-item active"><a href="{$_layoutParams.root}" class="nav-link">Home</a></li>
 	      	<li class="nav-item"><a href="{$_layoutParams.root}admin/" class="nav-link">Administración</a></li>
+			{if !isset(Session::get('autenticado'))}
+				<li class="nav-item"><a href="{$_layoutParams.root}usuarios/login" class="nav-link">Login</a></li>
+			{else}
+				<li class="nav-item"><a href="{$_layoutParams.root}usuarios/logout" class="nav-link">Logout</a></li>
+			{/if}
 	    </ul>
 	  </div>
 	</div>

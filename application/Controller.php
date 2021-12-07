@@ -28,7 +28,7 @@ abstract class Controller
 
 	protected function verificarSession(){
 		if (!Session::get('autenticado')) {
-			$this->redireccionar();
+			$this->redireccionar('usuarios/login');
 		}
 	}
 

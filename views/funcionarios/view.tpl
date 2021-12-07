@@ -10,6 +10,7 @@
 
                     {include file="../partials/_mensajes.tpl"}
 
+
                     <table class="table table-hover">
                         <tr>
                             <th>RUN:</th>
@@ -43,11 +44,36 @@
                             <th>Modificado:</th>
                             <td>{$funcionario.updated_at|date_format:"%d-%m-%Y %H:%M:%S"}</td>
                         </tr>
+                        <tr>
+                            <th>Activo:</th>
+                            {if isset($funcionario.usuario)}
+                                <td>
+                                    {if $funcionario.usuario.activo == 1}
+                                        Si
+                                    {else}
+                                        No
+                                    {/if}
+                                    <a href="{$_layoutParams.root}usuarios/edit/{$funcionario.usuario.id}">Cambiar Estado</a>
+                                </td>
+                            {else}
+                                <td>
+                                    No tiene una cuenta asociada
+                                </td>
+                            {/if}
+                        </tr>
                     </table>
                     <p>
                         <a href="{$_layoutParams.root}funcionarios/edit/{$funcionario.id}"
                             class="btn btn-outline-primary btn-sm">Editar</a>
                         <a href="{$_layoutParams.root}funcionarios/" class="btn btn-outline-primary btn-sm">Volver</a>
+
+                        {if !isset($funcionario.usuario.id)}
+                            <a href="{$_layoutParams.root}usuarios/add/{$funcionario.id}" class="btn btn-outline-success">Crear Cuenta</a>
+                        {else}
+                            <a href="{$_layoutParams.root}usuarios/editPassword/{$funcionario.usuario.id}"
+                                class="btn btn-outline-success">Cambiar Password</a>
+                        {/if}
+
                     </p>
                 </div>
             </div>

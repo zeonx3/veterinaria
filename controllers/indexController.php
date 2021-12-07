@@ -13,6 +13,7 @@ class indexController extends Controller
 	{
 
 		$this->_view->assign('titulo', 'Bienvenido a Veterinaria');
+		$this->_view->assign('title', 'Bienvenido a Veterinaria');
 
 
 
