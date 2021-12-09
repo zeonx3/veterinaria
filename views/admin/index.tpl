@@ -12,6 +12,9 @@
                         <a href="{$_layoutParams.root}funcionarios/"
                             class="list-group-item list-group-item-action">Funcionarios</a>
                         <a href="{$_layoutParams.root}roles/" class="list-group-item list-group-item-action">Roles</a>
+
+                        <a href="{$_layoutParams.root}servicio_tipos/" class="list-group-item list-group-item-action">Tipo de Servicios</a>
+
                     </div>
                 </div>
             </div>

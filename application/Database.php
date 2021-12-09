@@ -2,10 +2,11 @@
 use Illuminate\Database\Capsule\Manager as Database;
 
 $database = new Database;
+
 $database->addConnection([
     'driver' => 'mysql',
-    'host' => 'localhost',
-    'database' => 'veterinaria',
+    'host' => '127.0.0.1',
+    'database' => 'veternianaria',
     'username' => 'root',
     'password' => '1234',
     'charset' => 'utf8',

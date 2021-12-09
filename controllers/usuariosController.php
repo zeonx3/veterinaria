@@ -50,9 +50,9 @@ class usuariosController extends Controller
 
             $usuario = Usuario::with('funcionario')->where('clave', $clave)->where('activo', 1)->where('funcionario_id', $funcionario->id)->first();
 
-            //print_r($usuario);exit;
+            //print_r($usuario.' usuario ');exit;
 
-            if (!$usuario) {
+            if ($usuario) {
                 $this->_view->assign('_error','El email o el password no están registrados');
                 $this->_view->renderizar('login');
                 exit;
