@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0-rc.0, created on 2021-12-08 16:42:15
+/* Smarty version 4.0.0-rc.0, created on 2021-12-20 21:38:28
   from 'C:\xampp\htdocs\veterinaria\views\layout\default\background_one.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0-rc.0',
-  'unifunc' => 'content_61b10a97698a89_69586822',
+  'unifunc' => 'content_61c122043169c5_03560866',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '253a50005f3529b5c93724aae520d0ec7951f30d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\veterinaria\\views\\layout\\default\\background_one.tpl',
-      1 => 1637029847,
+      1 => 1640044290,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61b10a97698a89_69586822 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61c122043169c5_03560866 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="hero-wrap js-fullheight" style="background-image: url('<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
 bg_1.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>

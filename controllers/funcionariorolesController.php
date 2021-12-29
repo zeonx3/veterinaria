@@ -1,4 +1,5 @@
 <?php
+namespace models;
 use models\FuncionarioRol;
 use models\Funcionario;
 use models\Rol;
@@ -8,6 +9,8 @@ class funcionariorolesController extends Controller
     public function __construct()
     {
         parent::__construct();
+        $this->verificarSession();
+        $this->verificarRolAdmin();
     }
 
     public function index()
@@ -47,7 +50,8 @@ class funcionariorolesController extends Controller
                 exit;
             }
 
-            $funcionarioRol = FuncionarioRol::select('id')->where('funcionario_id',$this->filtrarInt($id))->where('rol_id', $this->getInt('rol'))->first();
+            $funcionarioRol = FuncionarioRol::select('funcionario_id')->find($this->filtrarInt($id));
+            $funcionarioRol = FuncionarioRol::select('id')->where('funcionario_id', $funcionarioRol->funcionario_id)->where('rol_id', $this->getInt('rol'))->first();
 
             if ($funcionarioRol) {
                 $this->_view->assign('_error','El rol y el funcionario ingresados ya existen... intente con otra combinación');

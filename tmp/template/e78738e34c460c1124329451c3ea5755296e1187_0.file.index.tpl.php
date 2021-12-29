@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0-rc.0, created on 2021-12-08 19:01:53
+/* Smarty version 4.0.0-rc.0, created on 2021-12-20 21:50:08
   from 'C:\xampp\htdocs\veterinaria\views\roles\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0-rc.0',
-  'unifunc' => 'content_61b12b51a31371_08085072',
+  'unifunc' => 'content_61c124c0928f19_03467949',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e78738e34c460c1124329451c3ea5755296e1187' => 
     array (
       0 => 'C:\\xampp\\htdocs\\veterinaria\\views\\roles\\index.tpl',
-      1 => 1638991603,
+      1 => 1640044290,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../partials/_mensajes.tpl' => 1,
   ),
 ),false)) {
-function content_61b12b51a31371_08085072 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61c124c0928f19_03467949 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="ftco-section ftco-degree-bg">
     <div class="container">
         <div class="col-md-6 ftco-animate">

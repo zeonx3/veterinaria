@@ -7,11 +7,11 @@ class rolesController extends Controller
     {
         parent::__construct();
         $this->verificarSession();
+        $this->verificarRolAdmin();
     }
 
     public function index()
     {
-
         $this->verificarMensajes();
 
         $this->_view->assign('titulo','Roles');

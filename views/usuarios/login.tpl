@@ -24,6 +24,9 @@
                         <input type="password" name="clave" class="form-control" id="" aria-describedby=""
                             placeholder="Ingrese su password" onpaste="return false">
                     </div>
+                    <div class="mb-3">
+                        <a href="{$_layoutParams.root}usuarios/recuperar">¿Olvidaste tu password?</a>
+                    </div>
                     <input type="hidden" name="enviar" value="{$enviar}">
                     <button type="submit" class="btn btn-outline-success">Ingresar</button>
                     <a href="{$_layoutParams.root}" class="btn btn-outline-primary">Cancelar</a>

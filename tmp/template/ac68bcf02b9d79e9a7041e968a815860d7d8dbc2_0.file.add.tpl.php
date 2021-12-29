@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0-rc.0, created on 2021-12-08 17:20:54
+/* Smarty version 4.0.0-rc.0, created on 2021-12-20 21:54:58
   from 'C:\xampp\htdocs\veterinaria\views\comunas\add.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0-rc.0',
-  'unifunc' => 'content_61b113a6b3d6e0_31071978',
+  'unifunc' => 'content_61c125e28fc841_58845402',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ac68bcf02b9d79e9a7041e968a815860d7d8dbc2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\veterinaria\\views\\comunas\\add.tpl',
-      1 => 1637029847,
+      1 => 1640044290,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../comunas/_form.tpl' => 1,
   ),
 ),false)) {
-function content_61b113a6b3d6e0_31071978 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61c125e28fc841_58845402 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="ftco-section ftco-degree-bg">
     <div class="container">
         <div class="col-md-6 ftco-animate">

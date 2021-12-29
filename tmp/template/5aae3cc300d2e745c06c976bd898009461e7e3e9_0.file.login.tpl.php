@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0-rc.0, created on 2021-12-06 22:12:53
+/* Smarty version 4.0.0-rc.0, created on 2021-12-18 17:31:50
   from '/var/www/html/veterinaria/views/usuarios/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0-rc.0',
-  'unifunc' => 'content_61aeb5151593b2_83879617',
+  'unifunc' => 'content_61be4536552fe0_21881856',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5aae3cc300d2e745c06c976bd898009461e7e3e9' => 
     array (
       0 => '/var/www/html/veterinaria/views/usuarios/login.tpl',
-      1 => 1638839570,
+      1 => 1639859504,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../partials/_mensajes.tpl' => 1,
   ),
 ),false)) {
-function content_61aeb5151593b2_83879617 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61be4536552fe0_21881856 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="ftco-section ftco-degree-bg">
     <div class="container">
         <div class="col-md-6 ftco-animate">
@@ -49,6 +49,10 @@ function content_61aeb5151593b2_83879617 (Smarty_Internal_Template $_smarty_tpl)
                                 class="text-danger">*</span></label>
                         <input type="password" name="clave" class="form-control" id="" aria-describedby=""
                             placeholder="Ingrese su password" onpaste="return false">
+                    </div>
+                    <div class="mb-3">
+                        <a href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+usuarios/recuperar">¿Olvidaste tu password?</a>
                     </div>
                     <input type="hidden" name="enviar" value="<?php echo $_smarty_tpl->tpl_vars['enviar']->value;?>
 ">
